@@ -1,53 +1,83 @@
 body {}
 .header {
-  width:100%; display:flex; flex-flow:row nowrap; margin:0 auto;
+  width:100%; display:flex; flex-flow:row nowrap;
   position: relative;
   z-index:999;
+  top:20px;
 }
-.header .nav {position:absolute; left:0; color:}
-.header .nav .nav1 {}
+.header .nav {position:absolute; left:40px;}
+.header .nav * {color:var(--white);}
+.header .nav .nav1 {display:flex; gap:20px;}
 .header .nav .nav1 .shop {}
 .header .nav .nav1 .shop a {}
-.header .nav .nav1 .shop .nav2 {}
+.header .nav .nav1 .shop .nav2 {display:none;}
 .header .nav .nav1 .shop .nav2 .all {}
 .header .nav .nav1 .shop .nav2 .fragrance {}
 .header .nav .nav1 .brand {}
-.header .logo {width:200px; position: absolute; left:50%;}
+.header .logo {width:200px; position: absolute; left:50%; transform: translateX(-50%);}
 .header .logo img {width:100%;}
-.header .button_area {position: absolute; right:0;}
-.header .button_area button {}
-.header .button_area button img {}
+.header .button_area {position: absolute; right:40px; width:max-content;}
+.header .button_area button {background:none;}
+.header .button_area button img {width:24px; margin-right:10px;}
 /* -------------------------------------------------------------- */
-.container {width:100%;}
-.container .m_sec01 {}
+.container {}
+.container .m_sec01 {position:relative;}
 .container .m_sec01 #main_banner {}
 .container .m_sec01 #main_banner .swiper-wrapper {}
 .container .m_sec01 #main_banner .swiper-wrapper #banner_swiper {}
-.container .m_sec01 #main_banner .swiper-wrapper #banner_swiper iframe {width:100%; z-index:10;}
-.container .m_sec01 #main_banner .swiper-wrapper #banner_swiper .swiper-slide {}
-.container .m_sec01 .logo {}
-.container .m_sec01 .logo img {}
+.container .m_sec01 #main_banner .swiper-wrapper #banner_swiper iframe {
+  width:100%; height:100vh;
+}
+.container .m_sec01 #main_banner .swiper-wrapper #banner_swiper .block {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 2;}
+.container .m_sec01 #main_banner .swiper-wrapper .swiper-slide {}
+.container .m_sec01 .logo {position:absolute; left:50%; top:50%; z-index:30; transform:translateX(-50%)}
+.container .m_sec01 .logo img {width:100%;}
 /* --------------------------------------------------------------- */
-.container .m_sec02 {}
-.container .m_sec02 .new_banner {}
-.container .m_sec02 .new_banner a {}
+.container .m_sec02 {
+  display:flex; height:980px;
+}
+.container .m_sec02 .new_banner {
+  background: url(../images/banner1_img/img1.webp);
+  background-repeat: no-repeat;
+  width:100%;
+  position: relative;
+}
+.container .m_sec02 .new_banner a {position:absolute; bottom:100px; left:100px;}
+.container .m_sec02 .new_banner a * {color:var(--white);}
 .container .m_sec02 .new_banner a h2 {}
 .container .m_sec02 .new_banner a h3 {}
 .container .m_sec02 .new_banner a img {}
-.container .m_sec02 .collection {}
-.container .m_sec02 .collection p {}
-.container .m_sec02 .collection .collection_swiper {}
-.container .m_sec02 .collection .collection_swiper .swiper-wrapper {}
-.container .m_sec02 .collection .collection_swiper .swiper-wrapper .swiper-slide {}
-.container .m_sec02 .collection .collection_swiper .swiper-wrapper .swiper-slide .img1 {}
-.container .m_sec02 .collection .collection_swiper .swiper-wrapper .swiper-slide .img2 {}
-.container .m_sec02 .collection .collection_swiper .swiper-wrapper .swiper-slide .img3 {}
+.container .m_sec02 .collection {
+  width:100%; text-align: center; padding-top:40px;
+  background-color:var(--black-1f);
+}
+.container .m_sec02 .collection p {color:var(--white); margin-bottom:40px;}
+.container .m_sec02 .collection #collection_swiper {height:700px;}
+.container .m_sec02 .collection #collection_swiper .swiper-wrapper {}
+.container .m_sec02 .collection #collection_swiper .swiper-wrapper .swiper-slide {}
+  .container .m_sec02 .collection #collection_swiper .swiper-wrapper .swiper-slide .img1 {
+  background: url(../images/banner1_img/img_bg1.png);
+  width:100%; height:100%;
+}
+.container .m_sec02 .collection #collection_swiper .swiper-wrapper .swiper-slide .img2 {}
+.container .m_sec02 .collection #collection_swiper .swiper-wrapper .swiper-slide .img3 {}
 /* --------------------------------------------------------------- */
-.container .m_sec03 {}
+.container .m_sec03 {width:100%; height:100%;}
 .container .m_sec03 h2 {}
 .container .m_sec03 h3 {}
 .container .m_sec03 #product_swiper {}
 .container .m_sec03 #product_swiper .swiper_wrapper {}
+.container .m_sec03 #product_swiper .swiper_wrapper .s1 {
+  background: url(../images/remove/artisan.png);
+  width:1000px;
+}
 .container .m_sec03 #product_swiper .swiper_wrapper .swiper-slide {}
 .container .m_sec03 #product_swiper .swiper_wrapper .swiper-slide h2 {}
 .container .m_sec03 #product_swiper .swiper_wrapper .swiper-slide p {}
