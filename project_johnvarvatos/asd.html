@@ -1,42 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Varvatos - Portfolio Main Page</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-<section class="hero">
-<div class="hero-text">
-    <h2>Timeless Masculinity</h2>
-    <p>Classic. Modern. Effortlessly Refined.</p>
-</div>
-<div class="hero-img">
-    <img src="" alt="Main Visual">
-</div>
-</section>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <style>
+        .new-collection-section {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr; /* 3-column layout */
+            height: max-content;
+            max-width: 100%;
+        }
 
-<section class="about">
-    <div class="container">
-        <div class="about-img">
-            <img src="" alt="About Image">
-        </div>
-        <div class="about-text">
-        <h3>About the Brand</h3>
-        <p>
-            John Varvatos embodies modern craftsmanship, fusing rock 'n' roll attitude
-            with tailored sophistication. This project explores the brand's bold identity
-            through visual balance and elegant minimalism.
-        </p>
-        </div>
-    </div>
-</section>
+        .new-image-container {
+            background-size: cover;
+            background-position: center;
+            height: 100%;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        .new-content {
+            position: absolute;
+            bottom:20px;
+            left: 20px;
+            color:white;
+        }
+        .new-label {
+            font-size: 36px;
+            font-family: var(--font-serif);
+            font-weight: 400;
+        }
 
-<section class="collection">
-<h3>Featured Collection</h3>
-<div class="collection-list">
-    <div class="item"><img src="" alt="Item 1"><p>Black Leather Jacket</p></div>
-    <div class="item"><img src="" alt="Item 2"><p>Textured Knitwear</p></div>
-    <div class="item"><img src="" alt="Item 3"><p>Tailored Blazer</p></div>
-</div>
-</section>
+        .new-desc {
+            font-size: 16px;
+            margin-top: 5px;
+        }
 
-<section class="concept">
-
-</section>
-
-<footer class="footer">
-</footer>
+        .view-more-link {
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 20px;
+            color:white;
+        }
+        .new-product-slider {
+            /* 스크린샷의 중앙 이미지 슬라이더 */
+            padding: 20px; 0;
+            overflow: hidden;
+            width:100%;
+        }
+        .newProductSwiper {
+            width: 80%; /* 중앙 이미지 강조를 위해 너비 조정 */
+            margin: 0 auto;
+        }
+        .product-card img {
+                height: auto;
+        }
+    </style>
+</head>
+<body>
+        <section class="new-collection-section">
+            <div class="new-image-container" style="background-image: url('./images/banner1_img/img1.webp');">
+                <div class="new-content">
+                    <p class="new-label">NEW</p>
+                    <p class="new-desc">Modern Tailoring, Vintage Soul.</p>
+                    <a href="#" class="view-more-link" aria-label="더보기"><i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <div class="new-product-slider">
+                <div class="swiper newProductSwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide product-card">
+                            <img src="./images/banner1_img/img_bg1.png" alt="New Product 1">
+                        </div>
+                        <div class="swiper-slide product-card">
+                            <img src="./images/banner1_img/img_bg1.png" alt="New Product 2">
+                        </div>
+                        <div class="swiper-slide product-card">
+                            <img src="./images/banner1_img/img_bg1.png" alt="New Product 3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+</body>
+<script>
+        // 2. Swiper 초기화 (New Product Slider - 중간 이미지)
+    const newProductSwiper = new Swiper('.newProductSwiper', {
+        loop: true,
+        slidesPerView: 1,
+        centeredSlides: true,
+        spaceBetween: 20,
+        // 반응형 설정: 1024px 이상에서는 중앙에 하나만 크게 보이도록 조정
+        breakpoints: {
+            1024: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+            }
+        }
+    });
+</script>
+</html>

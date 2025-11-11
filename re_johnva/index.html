@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Varvatos - Portfolio Main Page</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <!-- Noto Sans KR + Noto Serif KR -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR:wght@200..900&display=swap" rel="stylesheet">
+    <!--플러그인 필수 css cdn 연결-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!--플러그인 필수 JS cdn 연결-->
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="./styles/index.css"> 
+    <script src="./scripts/index.js" defer></script>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-inner">
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">SHOP</a>
+                        <div class="dropdown-menu">
+                            <a href="#" class="nav-all">전체</a>
+                            <a href="#">프레그런스</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">BRAND</a>
+                        <div class="dropdown-menu">
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            
+            <h1 class="logo">
+                <a href="#"><img src="./images/logo/logo.png" alt=""></a>
+            </h1>
+            
+            <div class="header-icons">
+                <button class="icon-btn search-btn" aria-label="검색"><img src="./images/icon/search.png" alt="검색"></button>
+                <button class="icon-btn user-btn" aria-label="로그인"><img src="./images/icon/person.png" alt="로그인/회원가입"></button>
+                <button class="icon-btn cart-btn" aria-label="장바구니"><img src="./images/icon/shopping_bag.png" alt="장바구니"></button>
+                <button class="icon-btn mobile-menu-btn" aria-label="메뉴"><img src="./images/icon/menu.png" alt="메뉴"></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        
+        <section class="main-banner-section">
+            <div class="swiper mainSwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide banner-slide">
+                        <div class="banner-content player">
+                            <div class="video-overlay"></div>
+                            <iframe width="1310" height="737" src="https://www.youtube.com/embed/bay-vT_FQk0?autoplay=1&mute=1&loop=1&modestbranding=1&rel=0" 
+                            title="John Varvatos Pre-Fall 2022 Campaign Featuring JJ Kaleo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            <p class="slide-title"><img src="./images/logo/logo_wh.png" alt="존바바토스"></p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide banner-slide">
+                        <div class="banner-content">
+                            <p class="slide-title">The Art of Scent</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide banner-slide">
+                        <div class="banner-content">
+                            <p class="slide-title">Crafted for You</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="swiper-pagination custom-pagination"></div>
+            </div>
+        </section>
+
+        <section class="new-collection-section">
+            <div class="new-image-container">
+                <img src="./images/new/main_banner.webp" alt="">
+                <div class="new-content serif-font">
+                    <p class="new-label serif-font">NEW</p>
+                    <p class="new-desc serif-font">Modern Tailoring, Vintage Soul.</p>
+                    <a href="#" class="view-more-link" aria-label="더보기"><img src="./images/icon/arrow_right.png" alt="더보기"></a>
+                </div>
+            </div>
+            
+            <div class="new-product-container">
+                <div class="collection-title-box">
+                    <p class="collection-title serif-font">COLLECTION</p>
+                </div>
+                <div class="new-product-slider">
+                    <div class="swiper newProductSwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide product-card">
+                                <img src="./images/new/banner1.webp" alt="New Product 1">
+                            </div>
+                            <div class="swiper-slide product-card">
+                                <img src="./images/new/banner2.webp" alt="New Product 2">
+                            </div>
+                            <div class="swiper-slide product-card">
+                                <img src="./images/new/banner3.webp" alt="New Product 3">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination" id="new-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="artisanal-section">
+            <div class="artisanal-text-box">
+                <p class="sub-title serif-font">Artisanal & Energizing</p>
+                <p class="desc">장인 정신에 럭셔리함을 더해주는 수공예 등나무(라탄) 보틀 편안함을 더해주는 데일리 향취</p>
+            </div>
+
+            <div class="product-grid">
+                <a href="#" class="product-item">
+                    <img src="./images/product/artisan.png" alt="Artisan EDT">
+                    <div class="product-text">
+                        <p class="product-name">아티산 EDT</p>
+                        <p class="product-subtext">아티산만의 상쾌한 시트러스 향으로 젊음과 깨끗함을 전달합니다.</p>
+                    </div>
+                </a>
+                <a href="#" class="product-item">
+                    <img src="./images/product/artisan_black.png" alt="Artisan Black EDT">
+                    <div class="product-text">
+                        <p class="product-name">아티산 블랙 EDT</p>
+                        <p class="product-subtext">남성적인 터치가  더해져 섬세하면서도 강렬한 분위기를 선사합니다.</p>
+                    </div>
+                </a>
+                <a href="#" class="product-item">
+                    <img src="./images/product/artisan_blue.png" alt="Artisan Blue EDT">
+                    <div class="product-text">
+                        <p class="product-name">아티산 블루 EDT</p>
+                        <p class="product-subtext">따스한 햇살아래 푸른 바다의 풍요롭고 낭만적인 향기를 전달합니다. </p>
+                    </div>
+                </a>
+                <a href="#" class="product-item">
+                    <img src="./images/product/artisan_pure.png" alt="Artisan Pure EDT">
+                    <div class="product-text">
+                        <p class="product-name">아티산 퓨어 EDT</p>
+                        <p class="product-subtext">순수한 시트러스 향에 햇볕에 쬐인 나무의 절제된 우아함으로 포근하게 마무리됩니다. </p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="store-section">
+            <p class="store-title serif-font">With <img src="./images/logo/logo_wh.png" alt="존바바토스"></p>
+            <div class="store-list">
+                <div class="store-item">
+                    <div class="store-image-container">
+                        <img src="./images/store/offline.jpg" alt="존바바토스 오프라인 스토어">
+                    </div>
+                    <p class="store-name">존바바토스 오프라인 스토어</p>
+                    <p class="store-desc">직접 느껴보는 장인의 품격. 전국 매장에서 존바바토스를 만나보세요.</p>
+                </div>
+                <div class="store-item">
+                    <div class="store-image-container">
+                        <img src="./images/store/musinsa.jpg" alt="무신사 스토어">
+                    </div>
+                    <p class="store-name">무신사 스토어</p>
+                    <p class="store-desc">공식 입점. 최신 그대의 감각.</p>
+                </div>
+                <div class="store-item">
+                    <div class="store-image-container">
+                        <img src="./images/store/oliveyoung.png" alt="올리브영 온라인 스토어">
+                    </div>
+                    <p class="store-name">올리브영 온라인 스토어</p>
+                    <p class="store-desc">프리미엄 퍼퓸 라인, 전국 올리브영 매장 및 온라인몰 단독 판매.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-inner">
+            <div class="company-info">
+                <p class="company-name">(주)올세인츠코리아 사업자정보</p>
+                <ul class="info-list">
+                    <li>고객 서비스 : 080-801-7070 (평일 오전 11시- 오후 5시, 점심시간: 오후 1시-2시)</li>
+                    <li>이메일 : customerservice@allsaints.co.kr</li>
+                    <li>상호 : (주)올세인츠코리아 주소 : 서울특별시 강남구 논현로 722(논현동) 4층 (신헌빌딩)</li>
+                    <li>대표 : CHEN SHIAO HUA 사업자등록번호 : 120-88-05520 통신판매신고번호 : 제 2017-서울강남-03584</li>
+                </ul>
+                <p class="copyright">All Rights Reserved © John Varvatos, 2021</p>
+            </div>
+            
+            <div class="footer-sns">
+                <a href="https://www.instagram.com/johnvarvatoskorea/" target="_blank" aria-label="Instagram"><img src="./images/icon/instagram.png" alt="인스타그램"></a>
+                <a href="https://pf.kakao.com/_DPaxgs" target="_blank" aria-label="KakaoTalk"><img src="./images/icon/kakao.png" alt="카카오톡"></a>
+                <a href="https://www.youtube.com/user/johnvarvatos" target="_blank" aria-label="YouTube"><img src="./images/icon/youtube.png" alt="유튜브"></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

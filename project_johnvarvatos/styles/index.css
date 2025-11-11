@@ -1,0 +1,515 @@
+/* -------------------------------------- */
+/* 0. CSS Reset & Variables */
+/* -------------------------------------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* Color Palette */
+    --white: #FFFFFF;
+    --black: #000000;
+    --black-1f: #1F1F1F;
+    --gray100: #868686;
+    --gray200: #575757;
+    
+    /* Font Families */
+    --font-sans: 'Noto Sans KR', sans-serif;
+    --font-serif: 'Noto Serif KR', serif;
+
+    /* Base Spacing (임의 설정, 필요시 수정) */
+    --spacing-xs: 10px;
+    --spacing-sm: 20px;
+    --spacing-md: 40px;
+    --spacing-lg: 80px;
+    --max-width: 1280px;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--white);
+    background-color: var(--black-1f);
+    line-height: 1.2;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    left:0;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* -------------------------------------- */
+/* 1. Header */
+/* -------------------------------------- */
+.main-header {
+    background-color: var(--black);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:100%;
+    margin: 0 auto;
+    padding: 15px var(--spacing-sm);
+}
+
+.logo a {
+    font-family: var(--font-serif);
+    font-size: 24px;
+    color: #a0282b; /* 로고 색상 임의 지정 (붉은 계열) */
+    font-weight: 500;
+}
+
+/* Desktop Nav */
+.main-nav {
+    display: none; /* Mobile hidden by default */
+}
+
+.nav-links {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.nav-item {
+    position: relative;
+    padding: 0 5px;
+}
+
+.nav-link {
+    font-size: 14px;
+    font-weight: 500;
+    padding-bottom: 5px;
+    transition: color 0.3s;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--white);
+    padding: var(--spacing-sm) 0;
+    width: 120px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.dropdown-menu a {
+    display: block;
+    color: var(--black);
+    padding: 8px var(--spacing-sm);
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Hover effect */
+.nav-item:hover .nav-link {
+    border-bottom: 1px solid var(--white); /* 호버 시 밑줄 */
+}
+
+.nav-item.has-dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+/* Header Icons */
+.header-icons {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.mobile-menu-btn {
+    display: block; /* Mobile visible by default */
+}
+
+/* -------------------------------------- */
+/* 2. Main Banner Section (Swiper) */
+/* -------------------------------------- */
+.main-banner-section {
+    padding-top: 60px; /* Header 높이만큼 여백 */
+    background-color: var(--black);
+    height: 100vh;
+}
+
+.mainSwiper {
+    width: 100%;
+    height: 100%;
+}
+
+.banner-slide {
+    background-size: cover;
+    background-position: center center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-content {
+    text-align: center;
+}
+
+.slide-title {
+    font-family: var(--font-serif);
+    font-size: 36px;
+    font-weight: 400;
+    color: var(--white);
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Swiper Custom Pagination */
+.custom-pagination {
+    position: absolute;
+    bottom: var(--spacing-sm);
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto !important;
+    text-align: center;
+    color: var(--white);
+    font-size: 14px;
+}
+.swiper-pagination-bullet {
+    background: var(--white);
+    opacity: 0.5;
+}
+.swiper-pagination-bullet-active {
+    opacity: 1;
+}
+
+/* -------------------------------------- */
+/* 3. New Collection Section */
+/* -------------------------------------- */
+.new-collection-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding-bottom: var(--spacing-md);
+    background-color: var(--black-1f);
+}
+
+.new-image-container {
+    background-size: cover;
+    background-position: center top;
+    height: 500px; /* 모바일/태블릿 기준 */
+    position: relative;
+    padding: var(--spacing-sm);
+}
+
+.new-content {
+    position: absolute;
+    bottom: var(--spacing-md);
+    left: var(--spacing-sm);
+    color: var(--white);
+}
+
+.new-label {
+    font-size: 36px;
+    font-family: var(--font-serif);
+    font-weight: 400;
+}
+
+.new-desc {
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.view-more-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.new-product-slider {
+    /* 스크린샷의 중앙 이미지 슬라이더 */
+    padding: var(--spacing-md) 0;
+    overflow: hidden;
+}
+.newProductSwiper {
+    width: 80%; /* 중앙 이미지 강조를 위해 너비 조정 */
+    margin: 0 auto;
+}
+.product-card img {
+    height: auto;
+}
+
+.collection-title-box {
+    text-align: center;
+    padding: var(--spacing-sm) 0 var(--spacing-md);
+}
+
+.collection-title {
+    font-family: var(--font-serif);
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--white);
+}
+
+/* -------------------------------------- */
+/* 4. Artisanal Section (Product Grid) */
+/* -------------------------------------- */
+.artisanal-section {
+    padding: var(--spacing-md) var(--spacing-sm);
+    background-color: var(--black);
+}
+
+.artisanal-text-box {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto var(--spacing-md);
+}
+
+.sub-title {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.desc {
+    font-size: 14px;
+    color: var(--gray100);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 모바일 2열 */
+    gap: var(--spacing-sm);
+}
+
+.product-item {
+    display: block;
+    text-align: center;
+}
+
+.product-item img {
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.product-item:hover img {
+    transform: scale(1.03);
+}
+
+.product-name {
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.product-subtext {
+    font-size: 12px;
+    color: var(--gray100);
+    margin-top: 5px;
+}
+
+
+/* -------------------------------------- */
+/* 5. Store Section */
+/* -------------------------------------- */
+.store-section {
+    padding: var(--spacing-lg) var(--spacing-sm);
+    background-color: var(--black-1f);
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.store-title {
+    font-size: 36px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.store-list {
+    display: grid;
+    grid-template-columns: 1fr; /* 모바일 1열 */
+    gap: var(--spacing-md);
+}
+
+.store-item {
+    text-align: center;
+}
+
+.store-item img {
+    height: auto;
+    margin-bottom: var(--spacing-sm);
+}
+
+.store-name {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.store-desc {
+    font-size: 12px;
+    color: var(--gray100);
+}
+
+
+/* -------------------------------------- */
+/* 6. Footer */
+/* -------------------------------------- */
+.main-footer {
+    background-color: var(--black);
+    padding: var(--spacing-lg) var(--spacing-sm);
+}
+
+.footer-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.company-name {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: var(--spacing-sm);
+}
+
+.info-list li {
+    font-size: 12px;
+    color: var(--gray100);
+    line-height: 1.6;
+}
+
+.copyright {
+    font-size: 12px;
+    color: var(--gray100);
+    margin-top: var(--spacing-sm);
+}
+
+.footer-sns {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.footer-sns a {
+    font-size: 20px;
+    color: var(--white);
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.footer-sns a:hover {
+    opacity: 1;
+}
+
+/* -------------------------------------- */
+/* 7. Responsive Design (Desktop: 1024px and up) */
+/* -------------------------------------- */
+@media (min-width: 1024px) {
+    
+    .header-inner {
+        padding: 20px var(--spacing-md);
+    }
+
+    /* Desktop Nav Visibility */
+    .main-nav {
+        display: block;
+    }
+    
+    .mobile-menu-btn {
+        display: none;
+    }
+
+    /* Main Banner */
+    .slide-title {
+        font-size: 72px;
+    }
+    
+    /* New Collection Grid */
+    .new-collection-section {
+        grid-template-columns: 2fr 1fr 1fr; /* 3-column layout */
+        height: max-content;
+        max-width: 100%;
+        margin-top: 0;
+    }
+
+    .new-image-container {
+        grid-column: 1 / 2;
+        height: 960px;
+    }
+    
+    .new-content {
+        left: var(--spacing-md);
+    }
+    
+    .new-product-slider {
+        grid-column: 2 / 3;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+    .newProductSwiper {
+        width: 100%;
+    }
+
+    .collection-title-box {
+        grid-column: 3 / 4;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        padding-bottom: var(--spacing-md);
+    }
+
+    .collection-title {
+        font-size: 36px;
+        white-space: nowrap;
+    }
+    
+    /* Artisanal Grid */
+    .product-grid {
+        grid-template-columns: repeat(4, 1fr); /* Desktop 4열 */
+        gap: var(--spacing-md);
+    }
+    
+    /* Store Section */
+    .store-list {
+        grid-template-columns: repeat(3, 1fr); /* Desktop 3열 */
+    }
+    
+    /* Footer */
+    .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: 0 var(--spacing-md);
+    }
+    
+    .footer-sns {
+        margin-top: 0;
+    }
+}
